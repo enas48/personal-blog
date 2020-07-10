@@ -1,0 +1,87 @@
+/*start side bar*/
+.sidebar {
+  grid-area: auto/3/auto/4;
+  overflow: hidden;
+  text-align: center;
+  padding: 0 10px;
+  color: #5a5959;
+  margin: 50px;
+}
+
+.sidebar h3 {
+  background-color: #222;
+  color: #fbfbfb;
+  margin-top: 40px;
+  padding: 13px 0;
+}
+
+.sidebar .about-me {
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar .about-me .avater {
+  margin: 20px 0;
+}
+
+.sidebar .about-me .avater img {
+  width: 50%;
+  border-radius: 50%;
+}
+
+.sidebar .about-me p {
+  line-height: 1.3;
+  padding-bottom: 2px;
+}
+
+.sidebar .about-me p span {
+  font: 1.4em 'Kaushan Script', cursive;
+}
+
+.sidebar .social {
+  border-bottom: 1px solid #ccc;
+}
+
+.social-media {
+  width: 100%;
+  margin: 30px auto;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.social-media li {
+  opacity: 0.8;
+  transition: all 0.4s ease-in-out;
+}
+
+.social-media li:hover {
+  opacity: 1;
+}
+.social-media li img {
+  width: 40px;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.sidebar .categories ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.sidebar .categories ul li {
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.sidebar .categories ul li a {
+  color: #5a5959;
+  display: block;
+  transition: all 0.5s;
+}
+
+.sidebar .categories ul li a:hover {
+  color: #e26812;
+  padding-left: 10px;
+}

@@ -1,0 +1,188 @@
+/*TODO: main content for blog*/
+.single h2 {
+  margin: 15px 0;
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.single h2 span {
+  display: block;
+  font-size: 0.5em;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #e26812;
+}
+
+.single h2::before,
+.single h2::after {
+  border: none;
+  margin: 0;
+  flex: none;
+}
+
+.single .author-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.single .author-info p {
+  width: 70%;
+  letter-spacing: 0.1em;
+  color: #666;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.single .author-info p a {
+  color: #666;
+  letter-spacing: 0.02em;
+  font-size: 1.1em;
+}
+
+.single .author-info .social-media {
+  max-width: 250px;
+  margin: 0;
+  flex-wrap: nowrap;
+  justify-self: end;
+}
+
+.single .author-info .social-media img {
+  width: 30px;
+}
+
+.single .blog-post {
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+.single .blog-post figure {
+  text-align: center;
+  font: italic normal 300 14px lato;
+  color: #343f3b;
+  text-transform: capitalize;
+}
+
+.single .blog-post figure img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+}
+
+.single .blog-post .recipe-info p {
+  margin: 20px;
+  line-height: 1.5;
+}
+
+.single .blog-post .recipe-details {
+  list-style: none;
+  background-color: #eee;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  margin: 30px auto;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.single .blog-post .recipe-details li {
+  margin: 15px;
+}
+
+.single .blog-post .recipe-details li span {
+  display: block;
+  margin-bottom: 5px;
+  border-bottom: 2px dotted #e26812;
+  letter-spacing: 0.04em;
+  color: #333;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.single .blog-post h3 {
+  font-size: 1.3em;
+  margin: 15px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.single .blog-post .ingredients {
+  list-style: none;
+}
+
+.single .blog-post .ingredients li {
+  padding: 6px;
+}
+
+.single .blog-post .ingredients li::before {
+  content: '\2022';
+  color: #e26812;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+}
+
+.single .blog-post .instructions {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+}
+
+.single .blog-post .instructions li {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  counter-increment: my-awesome-counter;
+  line-height: 1.5;
+}
+
+.single .blog-post .instructions li::before {
+  content: counter(my-awesome-counter) '. ';
+  color: #e26812;
+  font-weight: bold;
+}
+
+.single .blog-post h3.heading-style {
+  border: none;
+  margin: 50px 0;
+}
+
+.single .blog-post .card {
+  font-size: 0.9em;
+}
+
+/* TODO: start responsive media query*/
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (max-width: 767px) {
+  .single h2 {
+    font-size: 2em;
+  }
+
+  .single .author-info {
+    text-align: center;
+  }
+
+  .single .author-info p {
+    grid-area: 1/1/2/3;
+    justify-self: center;
+  }
+
+  .single .author-info .social-media {
+    grid-area: 2/1/3/3;
+    justify-self: center;
+    margin: 10px;
+  }
+
+  .single .blog-post {
+    font-size: 1.1em;
+  }
+}

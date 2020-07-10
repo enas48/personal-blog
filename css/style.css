@@ -1,0 +1,291 @@
+/*TODO: import blog style*/
+@import url('blogstyle.css');
+@import url('main.css');
+@import url('sidebar.css');
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+}
+
+/*style for headers*/
+.heading-style {
+  width: 100%;
+  margin: 40px 0;
+  font-size: 2.5em;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(21, 30, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-style:before,
+.heading-style:after {
+  content: '';
+  border-top: 2px solid;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+}
+
+.heading-style:after {
+  margin: 0 0 0 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    'hd hd hd hd'
+    'main main main main'
+    'ft ft ft ft';
+}
+
+/*TODO: start header*/
+header {
+  grid-area: hd;
+  text-transform: capitalize;
+  background-color: #fbfbfb;
+  color: #000;
+  padding: 0 50px;
+  box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+header .logo {
+  font: 1.1em 'Kaushan Script', cursive;
+  width: 230px;
+  color: #000;
+  transition: color 0.4s ease-in-out;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+header .logo span {
+  color: #e26812;
+}
+
+header .logo img {
+  width: 50px;
+}
+
+header nav {
+  font-weight: bold;
+  justify-self: end;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+header nav li a {
+  color: #000;
+  padding: 5px 16px;
+  transition: color 0.4s ease-in-out;
+  font-size: 1.1em;
+}
+
+header nav li a:hover {
+  color: #e26812;
+}
+
+/*TODO: start footer*/
+footer {
+  grid-area: ft;
+  background-color: rgb(52, 59, 66);
+}
+
+footer .subscribe {
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  width: 55%;
+  margin: 60px auto;
+  padding: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer .subscribe h3 {
+  color: #fbfbfb;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+footer .subscribe input {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  height: 50px;
+  padding: 8px 14px 8px 14px;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+}
+
+footer .subscribe button {
+  background: #e26812;
+  height: 50px;
+  padding: 11px;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #fbfbfb;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 25px;
+  text-transform: capitalize;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+}
+
+footer .subscribe button:hover {
+  background-color: rgba(255, 129, 39, 0.9);
+  text-decoration: underline;
+}
+
+footer .copy-right {
+  height: 60px;
+  background-color: #212529;
+  padding: 10px;
+  line-height: 40px;
+  color: #fbfbfb;
+}
+
+footer .social-media {
+  width: 30%;
+}
+
+/* TODO: start responsive media query*/
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (max-width: 767px) {
+  /*header*/
+  header {
+    padding: 0 5px;
+    font-size: 0.9em;
+  }
+
+  .logo {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    font-size: 1.8em;
+    justify-self: center;
+  }
+
+  nav {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    justify-self: center !important;
+    padding: 5px;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  /*main content*/
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .page-banner .banner-title h2 {
+    font-size: 2em;
+  }
+
+  .page-banner .banner-title h3 {
+    font-size: 1.3em;
+  }
+
+  .page-banner .banner-title p {
+    font-size: 1em;
+  }
+
+  .main-content,
+  .sidebar {
+    grid-area: auto/1/auto/2;
+    font-size: 0.9em;
+    margin-top: 0;
+  }
+
+  .main-content .card {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  .main-content .card img:hover {
+    transform: scale(1);
+  }
+
+  .sidebar .about-me img {
+    width: 30% !important;
+  }
+
+  /*footer*/
+  footer {
+    font-size: 0.9em;
+  }
+
+  footer .subscribe {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  footer .social-media {
+    width: 100%;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    font-size: 1em;
+  }
+
+  .main-content,
+  .sidebar {
+    grid-area: auto/1/auto/4;
+    margin-top: 0;
+  }
+
+  .sidebar .about-me img {
+    width: 30% !important;
+  }
+
+  .social-media {
+    width: 50% !important;
+  }
+}
